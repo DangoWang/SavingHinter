@@ -68,12 +68,11 @@ class SavingHinterWin(QDialog):
         self.initAnimation(self.startPos, self.endPos)
 
     def initAnimation(self, startPos, endPos):
-        # 往上移动动画
         moveAnimation = QPropertyAnimation(self, "pos")
         moveAnimation.setStartValue(startPos)
         moveAnimation.setEndValue(endPos)
         moveAnimation.setEasingCurve(QEasingCurve.Linear)
-        moveAnimation.setDuration(30000)  # 在5秒的时间内完成
+        moveAnimation.setDuration(30000)  # 在30秒的时间内完成
         self.animationGroup = QParallelAnimationGroup(self)
         self.animationGroup.addAnimation(moveAnimation)
         self.animationGroup.start()
